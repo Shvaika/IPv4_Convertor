@@ -10,7 +10,7 @@ public class Main {
     public static int[] submusk2 = new int[4];
     
 	public static void main(String[] args) {
-		System.out.println("Podaj adres IP ");
+		System.out.println("Type IP address ");
 		ipaddress[0] = data.nextInt();
 		System.out.print(".");
         ipaddress[1] = data.nextInt();
@@ -19,7 +19,7 @@ public class Main {
         System.out.print(".");
         ipaddress[3] = data.nextInt();
         
-        System.out.println("Podaj maskê podsieci ");
+        System.out.println("Subnet mask ");
 		submusk[0] = data.nextInt();
 		submusk2[0] = submusk[0];
 		System.out.print(".");
@@ -33,15 +33,15 @@ public class Main {
         submusk2[3] = submusk[3];
         
         if(ipaddress[0] < 0 && ipaddress[1] < 0 && ipaddress[2] < 0 && ipaddress[3] < 0){
-            System.out.println("!!!--B³êdny adres IP, oktety musz¹ byæ wiêksze od 1--!!!");
+            System.out.println("!!!--****--!!!");
         }else if(ipaddress[0] > 255 && ipaddress[1] > 255 && ipaddress[2] > 255 && ipaddress[3] > 255){
-            System.out.println("!!!--B³êdny adres IP, oktet mo¿e mieæ najwiêksz¹ wartoœæ równ¹ 255--!!!");
+            System.out.println("!!!--****--!!!");
         }else if(submusk[0] < 0 && submusk[1] < 0 && submusk[2] < 0 && submusk[3] < 0){
-        	System.out.println("!!!--B³êdna maska, oktety musz¹ byæ wiêksze od 1--!!!");
+        	System.out.println("!!!--**** 1--!!!");
         }else if(ipaddress[0] > 255 && ipaddress[1] > 255 && ipaddress[2] > 255 && ipaddress[3] > 255){
-            System.out.println("!!!--B³êdna maska, oktet mo¿e mieæ najwiêksz¹ wartoœæ równ¹ 255--!!!");
+            System.out.println("!!!--**** 255--!!!");
         }else { 
-        	System.out.println("Wprowadzono prawid³owe dane "); 
+        	System.out.println("its ok "); 
         	firstmethod();
         	secondmethod();
         	thirtymethod();
@@ -69,7 +69,7 @@ public class Main {
 
 		for (int i = 0; i < 4; i++) {
             if(i == 0){ 
-            	System.out.println("---ADRES IP SIECI---");
+            	System.out.println("---network ip---");
                 System.out.print(netipadd[0]);
                 System.out.print("."); 
                 }else if(i == 1){ 
@@ -83,7 +83,7 @@ public class Main {
 		
 		for (int i = 0; i < 4; i++) { 
 			if(i == 0){ 
-				System.out.println("---ADRES IP PIERWSZEGO U¯YTECZNEGO HOSTA---");
+				System.out.println("---first host---");
                 System.out.print(firsthostipadd[0]);
                 System.out.print("."); 
                 }else if(i == 1){ 
@@ -105,7 +105,7 @@ public class Main {
 		
         for (int i = 0; i < 8; i++) {
             if(i == 0){
-                System.out.println("---ADRES ROZG£OSZENIOWY SIECI---");
+                System.out.println("---broadcast---");
                 int j = 0;
                 int[] tab = new int[8];
 
@@ -122,8 +122,8 @@ public class Main {
                     }
                 }
                 String stroktet = tab[7] + "" + tab[6] + "" + tab[5] + "" + tab[4] + "" + tab[3] + "" + tab[2] + "" + tab[1] + "" + tab[0] + "";
-                int decimalnum = Integer.parseInt(stroktet, 2); //decimalnum (decimal number) - jeden oktet maski podsieci w postaci dziesiêtnej
-                int finaldecimalokt = netipadd[0] + decimalnum; // finaldecimalokt (final decimal oktet) - wartoœæ jednego oktetu adresu broadcast
+                int decimalnum = Integer.parseInt(stroktet, 2); 
+                int finaldecimalokt = netipadd[0] + decimalnum; 
                 System.out.print(finaldecimalokt);
                 System.out.print(".");
                 
@@ -280,7 +280,7 @@ public class Main {
                 }
             }else{
             	System.out.println("");
-                System.out.println("---ADRES IP OSTATNIEGO U¯YTECZNEGO HOSTU---");
+                System.out.println("---last host---");
                 int j2 = 0;
                 int[] tab2 = new int[8];
 
@@ -297,8 +297,8 @@ public class Main {
                     }
                 }
                 String troktet = tab2[7] + "" + tab2[6] + "" + tab2[5] + "" + tab2[4] + "" + tab2[3] + "" + tab2[2] + "" + tab2[1] + "" + tab2[0] + "";
-                int ecimalnum = Integer.parseInt(troktet, 2); //decimalnum (decimal number) - jeden oktet maski podsieci w postaci dziesiêtnej
-                int inaldecimalokt = netipadd[0] + ecimalnum; // finaldecimalokt (final decimal oktet) - wartoœæ jednego oktetu adresu broadcast
+                int ecimalnum = Integer.parseInt(troktet, 2); //decimalnum (decimal number) - jeden oktet maski podsieci w postaci dziesiÃªtnej
+                int inaldecimalokt = netipadd[0] + ecimalnum; // finaldecimalokt (final decimal oktet) - wartoÅ“Ã¦ jednego oktetu adresu broadcast
                 System.out.print(inaldecimalokt);
                 System.out.print(".");
             }
@@ -310,7 +310,7 @@ public class Main {
 			numberOfHosts = numberOfHosts*2;
 		}
 		System.out.println("");
-		System.out.println("---LICZBA U¯YTECZNYCH HOSTÓW---");
+		System.out.println("---number of hosts---");
 		System.out.println(numberOfHosts);
 	}
 }
